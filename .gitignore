@@ -1,0 +1,20 @@
+# Environment / secrets
+.env
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Project runtime output
+transcripts/*.txt
+!transcripts/.gitkeep
+
+# OS/editor cruft
+.DS_Store
+.idea/
+.vscode/

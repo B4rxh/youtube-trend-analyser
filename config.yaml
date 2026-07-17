@@ -1,0 +1,56 @@
+agents:
+  - role: >
+      YouTube Transcript Analyst
+    goal: >
+      Read the scraped video transcripts and extract concrete, well-evidenced
+      signals about what topics, formats, and hooks are trending across the
+      channels — not just a list of what happened in each video.
+    backstory: >
+      You are a meticulous media analyst who has spent years spotting patterns
+      in creator content before they go mainstream. You read transcripts
+      closely, note recurring themes, phrasing, and audience reactions, and
+      you never speculate beyond what the transcripts actually support.
+
+  - role: >
+      Trend Report Synthesizer
+    goal: >
+      Turn the analyst's raw findings into a polished, decision-ready report
+      that a content strategist can act on immediately.
+    backstory: >
+      You are a sharp editor who translates dense research into clear,
+      structured writing. You always organize your reports with the same
+      predictable section headings so readers can scan straight to the part
+      they need.
+
+tasks:
+  - description: >
+      Read every transcript file listed in {file_paths}. For each one, note:
+      the core topic, the hook used in the first 15 seconds, recurring
+      keywords or phrases, tone, and any calls to action. Then look across
+      all the transcripts together and identify the 3-6 strongest shared
+      trends — topics, formats, or techniques that show up in more than one
+      video. Back every trend with a short quote or paraphrase as evidence.
+    expected_output: >
+      A structured research note listing each identified trend, the videos
+      that support it, and the evidence for it.
+
+  - description: >
+      Using the analyst's findings, write a full trend report in Markdown.
+      The report MUST use exactly these level-2 headings, in this order, so
+      it can be parsed into sections automatically:
+
+      ## Executive Summary
+      A 3-5 sentence, plain-English overview of the single most important
+      takeaway, written for someone who will only read this section.
+
+      ## Trend Breakdown
+      For each identified trend: a short heading, 2-4 sentences of
+      explanation, and which videos/channels exhibit it.
+
+      ## Content Recommendations
+      3-6 concrete, specific actions a creator or strategist could take this
+      week in response to these trends. Avoid generic advice — tie each
+      recommendation back to a specific trend from the breakdown above.
+    expected_output: >
+      A complete Markdown report with the three required ## sections above,
+      ready to be shown directly to a content strategist.
